@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #main{
+        display: flex;
+        border: solid;
+      }
+      #img{
+       
+        width: 250px;
+        height: 250px;
+        margin-top: 25%;
+        margin-left: 35%;
+      }
+      .two{
+       
+        width: 50%;
+        margin-right: -60%;
+        margin-left: 20%;
+      }
+    </style>
+</head>
+<body>
+      <div id="main">
+     <div class="one">
+      <img src="" alt="" id="img">
+     </div>
+     <div class="two">
+      <h1 id="category">Electronic Category </h1>
+     <h3 class="detail1">title</h3>
+       <p id="title"></p>
+     <h3 class="detail1">Price</h3>
+     <p id="price"></p>
+     <h3 class="detail1">Description</h3>
+     <p id="description"></p>
+     <h3 class="detail1">Rating</h3>
+     <p id="rating"></p>
+    </div>
+  </div>
+      <script>
+        
+       let mydata;
+       fetch('https://fakestoreapi.com/products/14')
+  .then(response => response.json())
+  .then(data => {
+    const { title, category, rating, price ,description,image} = data;
+    const titl = document.getElementById("title");
+        titl.innerHTML= title 
+        const pric = document.getElementById("price");
+        pric.innerHTML= price
+        const descriptio = document.getElementById("description");
+        descriptio.innerHTML= description
+        const ratin = document.getElementById("rating");
+        ratin.innerHTML= `Count: ${rating.count} Rate: ${rating.rate}`;
+        
+        const img1 = document.getElementById("img");
+        img1.src = image;
+
+
+    /* console.log(`Title: ${title}`);
+    console.log(`Category: ${category}`);
+    console.log(`Rating: ${rating}`);
+    console.log(`Price: ${price}`);
+    console.log(data); */
+  })
+  .catch(error => console.error(error));
+  
+      </script>
+</body>
+</html>

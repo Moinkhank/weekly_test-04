@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <style>
+        body{
+            background-image: url('https://images-na.ssl-images-amazon.com/images/I/61HpZxKi7sL._AC_SL1000_.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+       
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+           
+            
+              padding: 15px;
+              font-size: large;
+             
+        }
+        #top{
+            display: flex;
+
+            text-align: center;
+            margin-right: 15%;
+            margin-left: 15%;
+             padding: 15px;
+        }
+          #first-name{
+            background-color: white;
+            padding: 0;
+           height: 30px;
+           margin-left: 10px;
+          }
+          #last-name{
+            background-color: white;
+            padding: 0;
+           height: 30px;
+           margin-left: 20px;
+          }
+          #emailImp{
+          
+            margin-left: 15%;
+          }
+          #email{
+            margin-top: 25px;
+            background-color: white;
+            height: 35px;
+            width: 60%;
+          }
+          #messageInp{
+           
+            margin-left: 15%;
+          }
+          #message{
+            margin-top: 25px;
+            background-color: white;
+            height: 35px;
+            width: 60%;
+          }
+          button{
+       margin-left: 35%;
+          margin-top: 3%;
+          padding: 10px;
+          border-radius: 10px;
+          font-size: larger;
+          background-color: rgba(184, 169, 9, 0.751);
+          }
+    </style>
+  </head>
+  <body>
+    <h1>Contact Us</h1>
+    <form>
+        <div id="top">
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" name="first-name"><br><br>
+      
+      <label for="last-name">Last Name:</label>
+      <input type="text" id="last-name" name="last-name"><br><br>
+    </div>
+         <div id="emailImp">
+      <label for="email">Email Address:</label>
+      <input type="text" id="email" name="email"><br><br>
+    </div>
+        <div id="messageInp">
+      <label for="message" >Message:</label>
+      <textarea id="message" name="message"></textarea><br><br>
+    </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </body>
+</html>

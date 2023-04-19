@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Random User</title>
+          <style>
+            body{
+                background-color: rgb(114, 141, 87);
+            }
+        .user{
+            border: solid;
+            text-align: center;
+            display: flex;
+           padding-bottom: 7%;
+           margin-top: 5%;
+           border-radius: 10px;
+           width: 55%;
+           margin-left: 19%;
+           background-color: rgb(196, 222, 177);
+        }
+        #content{
+            margin-left: 15%;
+            font-size: 30px;
+            margin-top: 3%;
+        }
+        #picture{
+            border-radius: 45%;
+            margin-top: 5%;
+            margin-left: 3%;
+            padding: 18px;
+        }
+          </style>
+  </head>
+  <body>
+    <div class="user">
+   
+    <img id="picture" src="">
+    <div id="content">
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Phone:</strong> <span id="phone"></span></p>
+</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $.getJSON("https://randomuser.me/api/?results=1", function(data) {
+          var user = data.results[0];
+          $("#name").text(user.name.first + " " + user.name.last);
+          $("#email").text(user.email);
+          $("#phone").text(user.phone);
+          $("#picture").attr("src", user.picture.large);
+        });
+      });
+    </script>
+  </body>
+</html>
